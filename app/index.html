@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Plotting API -->
+    <script src="plotly-latest.min.js"></script>
+    <!-- Styling -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<div class="grid-container">
+    <div class="parameters">Parameters</div>
+    <div class="plot">
+        Plot
+        <div id="tester" style="width: 600px; height: 250px;"></div>
+    </div>
+</div>
+</html>
+<script>
+	TESTER = document.getElementById('tester');
+	Plotly.plot( TESTER, [{
+	x: [1, 2, 3, 4, 5],
+	y: [1, 2, 4, 8, 16] }], {
+	margin: { t: 0 } } );
+</script>

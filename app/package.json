@@ -1,0 +1,22 @@
+{
+  "name": "multilayer-sim",
+  "version": "1.0.0",
+  "description": "Simulation of reflection/transmission coefficients for periodically stratified thin films.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefferytsummers/multilayer-sim.git"
+  },
+  "author": "Jeffery Summers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jefferytsummers/multilayer-sim/issues"
+  },
+  "homepage": "https://github.com/jefferytsummers/multilayer-sim#readme",
+  "devDependencies": {
+    "electron": "^4.0.1"
+  }
+}

@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background-color: purple;
+}
+
+.grid-container {
+    display: grid;
+    border-style: solid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-areas: "param plot"
+                         "param plot";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 5fr;
+}
+
+.grid-container > div {
+    display: grid;
+    text-align: center;
+    text-transform: rotate(45deg);
+}
+
+.parameters {
+    grid-area: param;
+    background-color: green;
+}
+
+.plot {
+    grid-area: plot;
+    background-color: red;
+}
+
+#tester {
+    z-index: 100;
+    background-color: yellow;
+}
