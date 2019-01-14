@@ -4,23 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Plotting API -->
-    <script src="plotly-latest.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- Styling -->
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<div class="grid-container">
-    <div class="parameters">Parameters</div>
-    <div class="plot">
-        Plot
-        <div id="tester" style="width: 600px; height: 250px;"></div>
+<div class="drag-bar">
+    <div>
+        <ul class="options">
+            <li>File</li>
+            <li>Edit</li>
+            <li>Options</li>
+        </ul>
+    </div>
+    1-D Photonic Band Gap Multilayer Simulation
+    <div>
+        <ul class="size">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
 </div>
+<div class="grid-container">
+    <div class="parameters">
+        <h1 id="test">Parameters</h1>
+        <div class="layeroptions">
+            <h2>Layer Options</h2>
+            <p>Number of Layers</p>
+            <input type="range" min="2" max="16" value="7" id="numlayers" 
+             class="slide-layers">
+        </div>
+        <div class="indices">
+            <h2>Indices</h2>
+            <p>Index 1: </p>
+            <input type="range" min="100" max="400" value="225" id="index1" 
+             class="slide-indices">
+            <p>Index 2: </p>
+            <input type="range" min="100" max="400" value="225" id="index2" 
+             class="slide-indices">
+        </div>
+        <div class="thickness">
+            <h2>Thickness</h2>
+            <p>Layer 1</p>
+            <input type="range" min="50" max="200" value="125" id="d1" 
+             class="slide-thickness">
+            <p>Layer 2</p>
+            <input type="range" min="50" max="200" value="125" id="d2" 
+             class="slide-thickness">
+        </div>
+    </div>
+    <div id="plot" class="plot"></div>
+</div>
 </html>
+
+<!-- jQuery Config -->
 <script>
-	TESTER = document.getElementById('tester');
-	Plotly.plot( TESTER, [{
-	x: [1, 2, 3, 4, 5],
-	y: [1, 2, 4, 8, 16] }], {
-	margin: { t: 0 } } );
+  window.$ = window.jQuery = require('jquery')
 </script>
+
+<script type="text/javascript" src="plot.js"></script>
+<script type="text/javascript" src="rtm.js"></script>

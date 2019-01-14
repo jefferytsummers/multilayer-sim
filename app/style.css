@@ -1,3 +1,11 @@
+/* 
+    Color Palette
+    #001f54 - oxford blue   - background
+    #eaeaea - isabelline    - text
+    #3df5ff - electric blue - borders
+*/
+
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -7,13 +15,13 @@
 html {
     height: 100%;
     width: 100%;
-    background-color: purple;
+    background-color: #001f54;
+    color: #eaeaea;
 }
 
 .grid-container {
     display: grid;
-    border-style: solid;
-    height: 100vh;
+    height: 97vh;
     width: 100vw;
     grid-template-areas: "param plot"
                          "param plot";
@@ -27,17 +35,77 @@ html {
     text-transform: rotate(45deg);
 }
 
+.drag-bar {
+    display: flex;
+    color: #eaeaea;
+    text-align: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 3vh;
+    margin: auto 0;
+    padding-top: 0.3%;
+    -webkit-app-region: drag;
+    border-bottom: 2px solid #3df5ff;
+    background-color: #001f54;
+}
+
+.drag-bar ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.drag-bar .options li {
+    float: left;
+    padding: 0 10px;
+    padding-top: 3px;
+}
+
+.drag-bar .options li:hover {
+    border: 2px dashed #3df5ff;
+}
+
+.drag-bar .size li:nth-of-type(2) {
+    
+}
+
 .parameters {
     grid-area: param;
-    background-color: green;
+}
+
+.parameters h1:first-of-type {
+    margin: 0 auto;
+    display: block;
+    height: 40px;
+    width: 80%;
+    border-bottom: 3px solid #eaeaea;
+}
+
+.parameters h2 {
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: 3px solid #eaeaea;
+}
+
+/* slidebar styling */
+input[class^="slide-"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%;
+    height: 25px;
+    background-color: #eaeaea;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+input[class="slide-"]:hover {
+    opacity: 1;
 }
 
 .plot {
     grid-area: plot;
+    margin: 20px 20px;
     background-color: red;
-}
-
-#tester {
-    z-index: 100;
-    background-color: yellow;
 }

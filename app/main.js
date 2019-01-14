@@ -1,7 +1,11 @@
-const electron = require('electron')
+// Math package
+const math = require('mathjs')
+// Basic electron stuff
+const electron = require('electron')                // Used to grab window properties
 const {app, BrowserWindow} = require('electron')
 const url = require('url')
 const path = require('path')
+
 
 let win
 
@@ -13,10 +17,18 @@ function createWindow() {
 
     if (externalDisplay) {
         win = new BrowserWindow({
-            width: 1500,
-            height: 800,
+            width: 1550,
+            height: 850,
             x: externalDisplay.bounds.x+200, 
-            y: externalDisplay.bounds.y+100})
+            y: externalDisplay.bounds.y+100,
+            frame: false})
+    } else {
+        win = new BrowserWindow({
+            width: 1050,
+            height: 1150,
+            x: 1100,
+            y: 0,
+            frame: false})
     }
     win.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
@@ -24,5 +36,5 @@ function createWindow() {
         slashes: true
     }))
 }
-
+    
 app.on('ready', createWindow)
